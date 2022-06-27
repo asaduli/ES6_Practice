@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Html Elemetns By Class Name</title>
+</head>
+<body>
+ <h1>Finding HTML Elements By Class Name </h1>
+<p class="cls1">This is Paragraph 1</p>
+<p class="cls1">This is Paragraph 2</p>
+<p class="cls1">This is Paragraph 3</p>
+<p class="cls1">This is Paragraph 4</p>
+
+<p id="demo"></p>
+    <script>
+
+        const x=document.getElementsByClassName("cls1");
+        let text="";
+        for(let i=0;i<x.length;i++){
+            text +=x[i].innerHTML+" with Additional Text <br>";
+        }
+        document.getElementById("demo").innerHTML=text;
+    </script>
+</body>
+</html>
