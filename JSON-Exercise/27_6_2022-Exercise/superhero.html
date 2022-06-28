@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Hero Json</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let superheros = {
+            "squadName": "Super hero squad",
+            "homeTown": "Metro City",
+            "formed": 2016,
+            "secretBase": "Super tower",
+            "active": true,
+            "members": [
+                {
+                    "name": "Molecule Man",
+                    "age": 31,
+                    "secretIdentity": "Dan Jukes",
+                    "powers": [
+                        "Radiation resistance",
+                        "Turning tiny",
+                        "Radiation blast"
+                    ]
+                },
+                {
+                    "name": "Madame Uppercut",
+                    "age": 39,
+                    "secretIdentity": "Jane Wilson",
+                    "powers": [
+                        "Million tonne punch",
+                        "Damage resistance",
+                        "Superhuman reflexes"
+                    ]
+                },
+                {
+                    "name": "Eternal Flame",
+                    "age": 10,
+                    "secretIdentity": "Unknown",
+                    "powers": [
+                        "Immortality",
+                        "Heat Immunity",
+                        "Inferno",
+                        "Teleportation",
+                        "Interdimensional travel"
+                    ]
+                }
+            ]
+        };
+
+          let members=superheros.members.map(member => member);
+          let memberName=members.map(member => member.name);
+
+          let power;
+          power=members.map((member,index) =>member.powers);  
+           let seniorMember=members.filter(member => member.age >=30).map(member =>member.name);
+
+           let numberofSeniorMembers=seniorMember.reduce((total,member)=>total+1,0)
+           console.log(numberofSeniorMembers);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark</title>
+</head>
+
+<body>
+
+
+    <script>
+        let students = [
+            {
+                name: "Asadul Islam",
+                mark: 85
+            },
+            {
+                name: "Atik Faysal",
+                mark: 90
+            },
+            {
+                name: "Anik Kanti Sikder",
+                mark: 75
+            },
+            {
+                name: "MD Tahsin",
+                mark: 96
+            }
+
+        ];
+
+      let names=students.map(student=>student.name);
+
+      let topStudents=students.filter(student=>student.mark>=90).map(student=>student.name);
+
+      console.log(topStudents);
+
+      let totalMark=students.reduce((total,number)=>total+number.mark,0);
+
+      console.log(totalMark);
+      
+    </script>
+</body>
+
+</html>
