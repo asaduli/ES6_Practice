@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function</title>
+</head>
+
+<body>
+    <h1>Exercise JavaScript Function</h1>
+
+
+
+
+    <script>
+
+        //   Type of JavaScript Function
+        //   >>Function Expression
+        //   >>Anonymous function
+        //   >>Immediately Invoked Function Expression(IIFE)
+        //   >>Constructed function
+        //   >>Getter Function
+        //   >>Arrow Function
+        //   >>Hosting
+
+
+        // Simple Function Statement
+
+
+        function greet() {
+
+            console.log("Welcome to JavaScript");
+        }
+
+        greet();
+         //Anonymous Function Exercise
+        let welcome = function () {
+            console.log("Welcome to JavaScript Anonymous Function");
+        }
+        welcome();
+          
+        // Immediately Invoked Function Expression example
+         (function (){
+            console.log("Welcome to JavaScript IIFE  Function");
+         })();
+
+        //Constructor Function example
+
+        const division=new Function('num1', 'num2', 'return num1/num2');
+
+        console.log(division(15,5));
+
+        //constructor Function 
+
+        var person= function(name, age){
+            this.name=name;
+            this.age=age;
+        };
+
+        //creating instance of function
+
+        var person1=new person('Asadul',25);
+        var person2=new person('Niaz',26);
+
+        //print(person1,person2)
+
+        console.log(person1.name+"\tage: "+person1.age);
+        console.log(person2.name+"\tage: "+person2.age);
+         
+        //Arrow Function
+
+        let message=()=>"this is from arrow Function";
+
+        console.log(message());
+
+        let arrow2=(x)=>console.log(x); //with parameter and single statement
+
+        arrow2("this is arrow funtion 2");
+
+        let arrow3=(x,y)=>{    //with multiple statement
+          let sum=x+y;
+          return sum;
+        };
+        console.log(arrow3(10,5));
+
+
+
+    </script>
+
+</body>
+
+</html>

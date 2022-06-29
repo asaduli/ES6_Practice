@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Exercise</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        //Exercise of Arrow Funtion
+
+        //Arrow Function 1
+        //Without Argument and single statement arrow function
+        let greet = () => console.log("Welcome to JavaScript Arrow Function 1 ")
+        greet();
+
+        //Arrow Function 2
+        //with parameter and single statement
+        let greet2 = (message) => console.log(message);
+
+        greet2("This is arrow Function 2");
+
+        //Arrow Function 3
+        //with parameter and single statement
+        let greet3 = (name) => console.log(name + "! Welcome to JavaScript Arrow Function 3!");
+        greet3("Seyam");
+
+
+        //Arrow Function 4
+        //Double parameter and single statement arrow funtion
+        let fullName = (firstName, lastName) => firstName + " " + lastName;
+        console.log(fullName('Asadul', 'Islam'));
+
+        //Arrow Function 5
+        //Arrow Function with multiple parameter and multiple statement
+        //This arrow function used Return keyword for returing value
+        let sum = (number1, number2) => {
+            let result = number1 + number2;
+            return result;
+        }
+
+        //Arrow Funtion 6
+        //This funtion calculate avarage of 3 numbers
+        //This function take 3 arguments and retrung avarege value
+        console.log(sum(10, 40));
+        let avarage = (num1, num2, num3) => {
+            return (num1 + num2 + num3) / 3;
+        }
+        console.log(avarage(12, 20, 30).toFixed(2)); //for formating 2 digit deciaml number after point
+
+        //Arrow Funtion 7
+        //Single Argument Arrow Funtion
+        //This funtion take an integer number and calculate weather this number is even or odd
+        let oddEven = (number) => {
+
+            if (number % 2 == 0) {
+                console.log(number + " is Even Number");
+            }
+            else {
+                console.log(number + " is Odd Number");
+            }
+        }
+        oddEven(6);
+
+        //Arrow Function 8
+
+        //For calculate greater number from two numbes
+        let greaterNumber = (num1, num2) => {
+            if (num1 > num2) {
+                console.log(num1 + " is greater than " + num2);
+            }
+            else if (num2 > num1) {
+                console.log(num2 + " is greater than " + num1);
+            }
+            else {
+                console.log("Both Numbers Are Equal");
+            }
+        }
+        greaterNumber(10, 15);
+
+        //Arrow Function 9 
+        //For Calculating length of a string
+        let lengthOfString = (x) => x.length;
+        console.log("length is: " + lengthOfString('Asadul Islam'));
+
+        //Arrow Function 10
+        //This function makes a string into Uppercase letters
+        let upperCase = (x) => x.toUpperCase();
+        console.log(upperCase('asadul'));
+
+
+        //Arrow Function 11
+        let sqrt = (x) => Math.sqrt(x);
+        console.log(sqrt(64));
+
+
+        //Arrow Function 12
+        //Arrow Function as an Expression
+        let age = 17;
+
+        let welcome = (age < 18) ?
+            () => console.log('Baby') :
+            () => console.log('Adult');
+        welcome();
+
+        //Arrow Function using Array
+
+        //Arrow Function 13
+        //Sorting Name of an String Array
+        let colors = ['red', 'green', 'blue', 'yellow', 'black'];
+
+        let sortNameColor = (x) => x.sort();
+
+        console.log(sortNameColor(colors));
+
+        //Arrow Function 14
+        //Sorting a number Array Assending  Order
+        let numbers = [54, 24, 67, 45, 54, 78, 12, 3, 90, 66, 26];
+
+        numbers.sort((a, b) => a - b);
+        console.log(numbers);
+
+        //Arrow Function 15
+        //Sorting a number Array Decending Order
+
+        let numbers2 = [54, 24, 67, 45, 54, 78, 12, 3, 186, 33]
+        numbers2.sort((a, b) => b - a);
+        console.log(numbers2);
+
+
+        //Arrow Function with higher order function
+
+        let persons = ['Asadul Islam', 'Anik Kanti Sikder', 'Atik Faysal', 'Aladdin', 'Asadujjam Niaz', 'Ela Akter', 'Munna', 'Hamid'];
+
+        //arrow function 16
+        //Calculating every values length using map
+        let wordLength = persons.map(person => person.length);
+        console.log(wordLength);
+
+        //arrow function 17
+        let upperName = persons.map(person => person.toUpperCase());
+        console.log(upperName);
+
+        //Arrow Function 18
+        //Splitin first Name from persons Array
+        let firstName = persons.map(person => person.split(' ')[0]);
+
+        for (fname of firstName) console.log(fname);
+
+        //Arrow Function 19
+        //Make First Character to Uppercase
+
+        let languages = ['java', 'c', 'python', 'php', 'javascript'];
+
+
+        let modifiedLanguages = languages.map(language => language.charAt(0).toUpperCase() + language.slice(1));
+
+        console.log(modifiedLanguages);
+
+        //Arrow Function 20
+        //Finding Even and Odd Number from array
+        let oddNumbes = numbers.filter(number => number % 2 != 0);
+        let evenNumbes = numbers.filter(number => number % 2 == 0);
+
+        console.log("Odd Numbes: " + oddNumbes + "\nEven Numbes: " + evenNumbes);
+
+
+        //Arrow Function 21
+        //Calculating Sum of Numbers
+        let sumOfNumbers = numbers.reduce((total, numbers) => total + numbers, 0);
+        console.log("sumOfNumbers: " + sumOfNumbers);
+
+        //Arrow Function 22
+        //Fining Max number from array
+
+        let maxNumber = numbers.reduce((a, b) => Math.max(a, b), -Infinity);
+
+        console.log("maxNumber: " + maxNumber);
+
+
+
+
+        // Immediately Invoked Function Expression example
+        (function () {
+            console.log("Welcome to JavaScript IIFE  Function");
+        })();
+
+
+        (function () {
+
+            let date = new Date();
+
+            console.log(date.toDateString());
+        })();
+        (function () {
+
+            let date = new Date();
+
+            console.log(date.toLocaleTimeString());
+        })();
+        (function () {
+
+let date = new Date();
+
+console.log(date.getFullYear());
+})();
+
+
+
+
+    </script>
+
+</body>
+
+</html>
