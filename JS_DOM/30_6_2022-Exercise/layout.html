@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font: 76% arial, sans-serif
+        }
+
+        p {
+            margin: 0 10px 10px
+        }
+
+        a {
+            display: block;
+            color: #006;
+            padding: 10px
+        }
+
+        div#header {
+            position: relative
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+            background: #EEE;
+            color: #79B30B
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px
+        }
+
+        div#content p {
+            line-height: 1.4
+        }
+
+        div#navigation {
+            background: #B9CAFF
+        }
+
+        div#extra {
+            background: #FF8539
+        }
+
+        div#footer {
+            background: #333;
+            color: #FFF
+        }
+
+        div#footer p {
+            margin: 0;
+            padding: 5px 10px
+        }
+
+        div#footer a {
+            display: inline;
+            padding: 0;
+            color: #C6D5FD
+        }
+
+        div#wrapper {
+            float: left;
+            width: 100%
+        }
+
+        div#content {
+            margin: 0 25%
+        }
+
+        div#navigation {
+            float: left;
+            width: 25%;
+            margin-left: -100%
+        }
+
+        div#extra {
+            float: left;
+            width: 25%;
+            margin-left: -25%
+        }
+
+        div#footer {
+            clear: left;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header"></div>
+        <div id="wrapper"></div>
+        <div id="navigation"></div>
+        <div id="extra"></div>
+        <div id="footer"></div>
+
+    </div>
+
+    <script>
+
+        //For Header section
+        
+        {
+            let header = document.getElementById("header")
+            let h1 = document.createElement("h1")
+            h1.innerHTML = "header"
+            let a = document.createElement("a")
+            a.setAttribute("href", "https://www.html.it/layoutgala/layout01.zip")
+            a.innerHTML = "Download this Layout"
+            header.appendChild(h1)
+            header.appendChild(a)
+
+
+        }
+
+
+        //for wrapper section
+        {
+       
+             let wrapper=document.getElementById("wrapper")
+             let content=document.createElement("div")
+             content.setAttribute("id", "content")
+             let p1=document.createElement("p")
+             let strong=document.createElement("strong")
+             strong.innerHTML="1) Content Here."
+             p1.appendChild(strong)
+             let text=document.createTextNode("column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.")
+             p1.appendChild(text)
+             content.appendChild(p1)
+
+             let p2=document.createElement("p")
+             p2.innerHTML = "very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column"
+             content.appendChild(p2)
+             let p3=document.createElement("p")
+             p3.innerHTML="fill long make long text very make long fill column make text very silly column filler silly text fill text filler filler filler make make make make text filler fill column filler make silly make text text fill make very filler column very"
+             content.appendChild(p3)
+             let p4=document.createElement("p")
+             p4.innerHTML = "column text long column make silly long text filler silly very very very long filler fill very fill silly very make make filler text filler text make silly text text long fill fill make text fill long text very silly long long filler filler fill silly long make column make silly long column long make very"
+            content.appendChild(p4)
+
+            let a=document.createElement("a")
+            a.setAttribute("href", "#")
+            a.innerHTML="Add Text To this section"
+            content.appendChild(a)
+             wrapper.appendChild(content)
+             
+
+        }
+
+
+    </script>
+</body>
+
+</html>
