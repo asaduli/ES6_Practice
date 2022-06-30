@@ -185,6 +185,37 @@
             navigation.appendChild(a)
 
         }
+        //for extra section
+        {
+
+            let extra=document.getElementById("extra")
+            let p=document.createElement("p")
+            let strong=document.createElement("strong")
+            strong.innerHTML = "3) More Staff Here. "
+            p.appendChild(strong)
+            let text=document.createTextNode("very text make long silly make text very very text make long filler very make column make silly column fill silly column long make silly filler column filler silly long long column fill silly column very")
+            p.appendChild(text)
+            extra.appendChild(p)
+            let a = document.createElement("a")
+            a.setAttribute("href", "#")
+            a.innerHTML = "Add Text To this section"
+            extra.appendChild(a)
+        }
+
+        //for footer section
+
+        {
+
+            let footer=document.getElementById("footer")
+            let p = document.createElement("p")
+            let text = document.createTextNode("The footer. You can go to the ")
+            p.appendChild(text)
+            let a=document.createElement("a")
+            a.setAttribute("href","https://www.html.it/layoutgala/")
+            a.innerHTML="index Page"
+            p.appendChild(a)
+            footer.appendChild(p)
+        }
 
 
     </script>
