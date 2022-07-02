@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button id="loadbtn"> Load Country</button>
+    <button id="deletebtn"> Delete List</button>
+    <div id="container"> </div>
+
+
+
+        <script>
+
+            // let xhr = new XMLHttpRequest();
+            // xhr.open('GET', 'https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json')
+            // xhr.send(null)
+            // xhr.onreadystatechange = function () {
+            //     var DONE = 4; // readyState 4 means the request is done.
+            //     var OK = 200; // status 200 is a successful return.
+            //     if (xhr.readyState === DONE) {
+            //         if (xhr.status === OK) {
+            //             let countryData = rev(xhr.responseText)// 'This is the returned text.'
+            //             console.log(typeof countryData) //
+            //         } else {
+            //             console.log('Error: ' + xhr.status); // An error occurred during the request.
+            //         }
+            //     }
+            // };
+
+            // fetch('https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json')
+            // .then(response => response.text())
+            // .then(data => {
+            //  const country=data
+            // } )
+
+
+            fetch('https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json')
+                .then(response => {
+
+                    return response.text();
+                }).then((data) => {
+
+                    let countries = eval(data)
+
+
+                    let execute = false
+                    function deleteCountry() {
+
+                       
+                            let element = document.getElementById("container")
+                             let node=document.getElementById('tb')
+                             element.removeChild(node)
+                            execute = false
+                        
+                            console.log(execute)
+
+                    }
+
+                    let showCountry = () => {
+
+                        if (execute != true) {
+                            let table = document.createElement('table')
+                            table.setAttribute('id', 'tb');
+                            table.border = '1'
+
+                            let thead = document.createElement('thead')
+                            let tbody = document.createElement('tbody')
+
+                            table.appendChild(thead)
+                            table.appendChild(tbody)
+
+
+                            let tr = document.createElement('tr')
+                            let th1 = document.createElement('th')
+                            th1.innerHTML = 'Country Name'
+                            let th2 = document.createElement('th')
+                            th2.innerHTML = 'Country Code'
+                            tr.appendChild(th1)
+                            tr.appendChild(th2)
+                            thead.appendChild(tr)
+                            for (country of countries) {
+                                let trbody = document.createElement('tr')
+                                let data1 = document.createElement('td')
+                                data1.innerHTML = country.name
+                                let data2 = document.createElement('td')
+                                data2.innerHTML = country.code
+                                trbody.appendChild(data1)
+                                trbody.appendChild(data2)
+                                tbody.appendChild(trbody)
+
+                            }
+
+                            let div = document.getElementById("container").appendChild(table)
+                            execute = true
+                            console.log(execute)
+                        }
+
+                    }
+                   
+                    document.getElementById("deletebtn").addEventListener("click", deleteCountry, false)
+                    document.getElementById("loadbtn").addEventListener("click", showCountry, false)
+
+
+
+                })
+
+
+
+
+
+
+
+
+ //
+        </script>
+</body>
+
+</html>
