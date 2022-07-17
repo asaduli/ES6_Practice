@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie</title>
+</head>
+
+<body>
+    <canvas id="myChart" style="max-width: 700px; margin-left: 25%; max-height: 500px;"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const xValue = ['Argentina', 'Brasil', 'France', 'Germany', 'Italy', 'Spain'];
+        const yValue = [2, 5, 3, 4, 2, 1];
+        const barColors = ["red", "green", "blue", "orange", "brown", "#b91d47"];
+
+        const data = {
+            labels: xValue,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValue,
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                title: {
+                    display: true,
+                    text: ""
+                }
+            }
+        };
+
+    </script>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+</body>
+
+</html>
