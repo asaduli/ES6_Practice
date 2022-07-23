@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Event</title>
+</head>
+
+<body>
+    <p>Select Your Programing language</p>
+
+        <select  id="select" onchange="showItem()">
+
+            <option>Java</option>
+            <option>PHP</option>
+            <option>Python</option>
+            <option>JavaScript</option>
+        </select>
+        <p id="demo"></p>
+
+        <script>
+          function showItem(){
+            var val=document.getElementById('select').value;
+            document.getElementById('demo').innerHTML="You selected "+val;
+          }
+        </script>
+</body>
+
+</html>

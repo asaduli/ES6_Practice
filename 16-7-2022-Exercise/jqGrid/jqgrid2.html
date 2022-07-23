@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqGrid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
+
+</head>
+
+<body>
+    <table id="list4"></table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+
+
+    <script>
+
+        jQuery("#list4").jqGrid({
+            datatype: "local",
+            height: 300,
+            colNames: ['StudentID', 'StudentName', 'Age', 'Gender', 'Mark Scored'],
+            colModel: [
+                { name: 'id', index: 'id', width: 60, sorttype: "int" },
+                { name: 'name', index: 'name', width: 100 },
+                { name: 'age', index: 'age', width: 80, align: "right", sorttype: "float" },
+                { name: 'gender', index: 'gender', width: 100 },
+                { name: 'total_mark', index: 'total_mark', width: 80, align: "right", sorttype: "float" },
+                
+            ],
+            multiselect: true,
+            caption: "Manipulating Array Data"
+        });
+        var mydata = [
+        { id:"ST1", name:"Preeti",age:"35",
+                gender:"Female",
+                total_mark:"320"
+      }  ,
+            {
+
+            
+                id:"ST2",
+                name:"Vincy",
+                age:"36",
+                gender:"Female",
+                total_mark:"170"
+        },
+            {
+                id:"ST3",
+                name:"Ashwini",
+                age:"41",
+                gender:"Female",
+                total_mark:"860"
+            } ,
+            {
+                id:"ST4",
+                name:"Kelly",
+                age:"32",
+                gender:"Female",
+                total_mark:"433"
+            },
+            
+              {
+                id:"ST5",
+                name:"Satvik",
+                age:"41",
+                gender:"male",
+                total_mark:"162"
+              }
+            ,
+            {
+                id:"ST6",
+                name:"William",
+                age:"37",
+                gender:"Female",
+               total_mark: "372"
+            }
+              
+            ,
+            {
+                id:"ST7",
+                name:"Chandan",
+                age:"31",
+                gender:"male",
+                total_mark:"375"
+            },
+            {
+                id:"ST8",
+                name:"David",
+                age:"45",
+                gender:"male",
+                total_mark:"327"
+            },
+            {
+                id:"ST9",
+                name:"Harry",
+                age:"29",
+                gender:"male",
+                total_mark:"205"
+            },
+            {
+                id:"ST10",
+                name:"Frost",
+                age:"29",
+                gender:"male",
+                total_mark:"300"
+            },
+            {
+                id:"ST11",
+                name:"Ginny",
+                age:"31",
+                gender:"male",
+                total_mark:"560"
+            },
+            {
+                id:"ST12",
+                name:"Flod",
+                age:"45",
+                gender:"Female",
+                total_mark:"342"
+            },
+            {
+                id:"ST13",
+                name:"Marshy",
+                age:"23",
+                gender:"Female",
+                total_mark:"470"
+            },
+            {
+                id:"ST13",
+                name:"Kennedy",
+                age:"43",
+                gender:"male",
+                total_mark:"313"
+            },
+            {
+                id:"ST14",
+                name:"Fiza",
+                age:"31",
+                gender:"Female",
+                total_mark:"750"
+            },
+            {
+                id:"ST15",
+                name:"Silva",
+                age:"34",
+                gender:"male",
+                total_mark:"985"
+            }
+        ];
+        for (var i = 0; i <= mydata.length; i++)
+            jQuery("#list4").jqGrid('addRowData', i + 1, mydata[i]);
+    </script>
+</body>
+
+</html>

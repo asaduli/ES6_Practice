@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Over and Out Event</title>
+</head>
+<body>
+
+    <p>Move mouse pointer over the image to bigger picture</p>
+    <img src="download.png" alt="JavaScript" height="200px" width="300px" onmouseover="bigImage(this)" onmouseout="normalImage(this)">
+    
+    <script>
+     function bigImage(x){
+        x.style.height='400px';
+        x.style.width='600px';
+     }
+     function normalImage(x){
+        x.style.height='200px';
+        x.style.width='300px';
+     }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Chart</title>
+
+</head>
+
+<body>
+  <canvas id="myChart" style="max-height: 500px;"></canvas>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+
+    const labels = [
+      '1-5 Over',
+      '6-10 Over',
+      '11-15 Over',
+      '16-20 Over',
+      '21-25 Over',
+      '26-30 Over',
+      '31-35 Over',
+      '36-40 Over',
+      '41-45 Over',
+      '46-50 Over'
+    ];
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Bangladesh Run Rate ',
+        backgroundColor: '#e8c3b9',
+        borderColor: '#2b5797',
+        data: [13, 42, 63, 78, 122, 148,161,182,246,289],
+      }]
+    };
+
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+  </script>
+
+
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
+</body>
+
+</html>
