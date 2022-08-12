@@ -15,9 +15,10 @@
   <div class="row mt-5 container-fluid">
     <div class="col-md-8">
       <div class="card row">
-        <div class="card-body" id="card-body">
-
+        <div class="card-body">
+        
         </div>
+       
       </div>
       <div class="row">
         <p id="html"></p>
@@ -31,19 +32,19 @@
 
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="1" id="title" onchange="change()">
+        <input class="form-check-input" type="checkbox" value="1" id="title" >
         <label class="form-check-label" for="title">
           Title
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="text" onchange="change()">
+        <input class="form-check-input" type="checkbox" value="" id="text" >
         <label class="form-check-label" for="text">
           Text
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="button" onchange="change()">
+        <input class="form-check-input" type="checkbox" value="" id="button" >
         <label class="form-check-label" for="button">
           Button
         </label>
@@ -99,58 +100,59 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   <script>
 
-    function change() {
+  //   function change() {
 
-      var select = document.getElementsByClassName("form-check-input");
-      for (item in select) {
-        console.log(item);
-        if (item == 0) {
+  //     var select = document.getElementsByClassName("form-check-input");
+  //     for (item in select) {
+  //       console.log(item);
+  //       if (item == 0) {
 
-          console.log(select[item].checked);
-          let title = document.getElementById("title");
-          if (select[item].checked) {
-            (function () {
-              var card = document.getElementsByClassName("card-body");
-              var element = document.createElement("h5");
-              element.setAttribute("class", "card-title");
-              element.innerHTML = "Card Title"
-              card[0].appendChild(element);
+  //         console.log(select[item].checked);
+  //         let title = document.getElementById("title");
+  //         if (select[item].checked) {
+  //           (function () {
+  //             var card = document.getElementsByClassName("card-body");
+  //             var element = document.createElement("h5");
+  //             element.setAttribute("class", "card-title");
+  //             element.innerHTML = "Card Title"
+  //             card[0].appendChild(element);
 
-            })();
-          }
-          else if (!select[item].checked) {
-            (function () {
-              var tag = document.getElementsByClassName("card-title")
-              var card = document.getElementsByClassName("card-body")
-              card[0].removeChild(tag[0]);
-            })();
-          }
-          console.log(select[item]);
+  //           })();
+  //         }
+  //         else if (!select[item].checked) {
+  //           (function () {
+  //             var tag = document.getElementsByClassName("card-title")
+  //             var card = document.getElementsByClassName("card-body")
+  //             card[0].removeChild(tag[0]);
+  //           })();
+  //         }
+  //         console.log(select[item]);
 
-        }
-        if (item == 1) {
-          let text = document.getElementById("text");
-          if (select[item].checked) {
-            (function () {
-              var card = document.getElementsByClassName("card-body");
-              var element = document.createElement("p");
-              element.setAttribute("class", "card-text");
-              element.innerText = "Some quick example text to build on the card title and make up the bulk of the card's content";
-              card[0].appendChild(element);
-            })();
-          }
-          else if (!select[item].checked) {
-            (function () {
-              var tag = document.getElementsByClassName("card-text")
-              var card = document.getElementsByClassName("card-body")
-              card[0].removeChild(tag[0]);
-            })();
-        }
-      }
-    }
-  }
+  //       }
+  //       if (item == 1) {
+  //         let text = document.getElementById("text");
+  //         if (select[item].checked) {
+  //           (function () {
+  //             var card = document.getElementsByClassName("card-body");
+  //             var element = document.createElement("p");
+  //             element.setAttribute("class", "card-text");
+  //             element.innerText = "Some quick example text to build on the card title and make up the bulk of the card's content";
+  //             card[0].appendChild(element);
+  //           })();
+  //         }
+  //         else if (!select[item].checked) {
+  //           (function () {
+  //             var tag = document.getElementsByClassName("card-text")
+  //             var card = document.getElementsByClassName("card-body")
+  //             card[0].removeChild(tag[0]);
+  //           })();
+  //       }
+  //     }
+  //   }
+  // }
 
   </script>
 </body>

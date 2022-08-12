@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="row mt-5 container-fluid">
+        <div class="col-md-8">
+            <div class="card row" id="card_head">
+                <div class="card-body" id="output_displayer">
+
+                </div>
+
+            </div>
+            <div class="row">
+                <p id="source_displayer">
+
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4" id="toolbar">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary mx-1">Reset</button>
+                <button class="btn btn-primary mx-1" onclick="remove();">Remove Title</button>
+
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="1" id="title">
+                <label class="form-check-label" for="title">
+                    Title
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="text">
+                <label class="form-check-label" for="text">
+                    Text
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="button">
+                <label class="form-check-label" for="button">
+                    Button
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="image">
+                <label class="form-check-label" for="image">
+                    Image
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="header">
+                <label class="form-check-label" for="header">
+                    Header
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="footer">
+                <label class="form-check-label" for="footer">
+                    Footer
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Center">
+                <label class="form-check-label" for="center">
+                    Center
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="border">
+                <label class="form-check-label" for="border">
+                    Border
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="white-text">
+                <label class="form-check-label" for="white-text">
+                    White Text
+                </label>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <label for="colorpicker">Custom Color: </label><br>
+                <input type="color" id="colorpicker" value="#2CC8DD" style="width: 200px; margin-left: 10px;">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let output = null;
+        let sourcecode = null;
+        let output_displayer = document.getElementById("output_displayer")
+        let source_displayer = document.getElementById("source_displayer");
+
+
+        function showTitle() {
+            output = prepareTitle();
+            //sourcecode = `&lt;h1&gt;Hello output</h1>`;//use decodeEntity
+            output_displayer.appendChild(output);
+            sourcecode = document.getElementById('element_title').outerHTML;
+            source_displayer.innerText = sourcecode;
+        }
+        function removeTitle() {
+            document.getElementById('element_title').remove();
+
+        }
+        function showText() {
+            output=prepareText();
+            output_displayer.appendChild(output);
+            sourcecode = document.getElementById('element_text').outerHTML;
+            var br=document.createElement('br');
+            source_displayer.append(br);
+            source_displayer.append(sourcecode);
+        }
+        function removeText(){
+            document.getElementById('element_text').remove();
+        }
+        function toggle(e) {
+
+            if (e.srcElement.id == 'title') {
+                if (e.srcElement.checked) {
+                    showTitle();
+                } else {
+                    removeTitle();
+                }
+            }
+            if (e.srcElement.id == 'text') {
+                if (e.srcElement.checked) {
+                showText();
+                } else {
+                    removeText();
+                }
+
+            }
+        }
+            function decodeEntity() {
+                //?
+            }
+            function prepareTitle() {
+                //?
+                let h5 = document.createElement("h5");
+                h5.setAttribute("id", "element_title");
+                h5.innerHTML = "Card Title"
+                return h5;
+            }
+            function prepareText() {
+                let p = document.createElement("p");
+                p.setAttribute("id", "element_text");
+                p.innerHTML = "this is card text"
+                return p;
+            }
+
+            let title = document.getElementById("title")
+            title.addEventListener("click", toggle, false);
+            let text = document.getElementById('text');
+            text.addEventListener("click", toggle, false);
+            let button = document.getElementById('button');
+            let image = document.getElementById('image');
+            let header = document.getElementById('header');
+            let footer = document.getElementById('footer');
+            let center = document.getElementById('center');
+            let border = document.getElementById('border');
+            let whiteText = document.getElementById('white-text');
+
+    </script>
+
+
+</body>
+
+</html>

@@ -13,10 +13,12 @@ axios.get('https://picsum.photos/v2/list?page=2&limit=100').then(resp => {
       }
       else{
         
+        let lebel="Slide "+image;
         let button=document.createElement('button');
         button.setAttribute('type', 'button');
         button.setAttribute('data-bs-target', '_#carouselExampleIndicators');
         button.setAttribute('data-bs-slide-to',image);
+        button.setAttribute('aria-label',lebel)
         indicator_div[0].appendChild(button);
         let div=document.createElement('div');
         let img=document.createElement('img');
