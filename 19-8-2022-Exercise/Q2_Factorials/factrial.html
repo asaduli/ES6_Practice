@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <label for="text">Enter a number for calculating factorial?</label><br><br>
+        <input type="number" id="number" min=0 placeholder="Enter a number">
+        <button type="submit" id="btn">Submit</button>
+        <p id="demo" style="color:purple;"></p>
+
+    </div>
+    <script>
+        function factorial(n) {
+            let result=1;
+            if (n == 0 || n == 1) {
+                return n;
+            }
+            else if (n > 1) {
+                for (let i = 1; i <= n; i++) {
+                    result *= i;
+
+                }
+                return result;
+            }
+        }
+        console.log(factorial(6))
+    </script>
+
+</body>
+
+</html>
