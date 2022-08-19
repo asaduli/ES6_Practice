@@ -13,21 +13,20 @@
 
 <body>
     <div class="row mt-5 container-fluid">
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="card row" id="card_head">
                 <div class="card-body" id="output_displayer">
 
                 </div>
-
             </div>
             <div class="row">
-                <p id="source_displayer">
+                <pre id="source_displayer">
 
-                </p>
+                </pre>
             </div>
         </div>
 
-        <div class="col-md-4" id="toolbar">
+        <div class="col-md-5" id="toolbar">
             <div class="d-flex justify-content-center">
                 <button class="btn btn-primary mx-1" id="reset">Reset</button>
                 <button class="btn btn-primary mx-1" onclick="remove();">Remove Title</button>
@@ -64,7 +63,7 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox"  id="footer">
+                <input class="form-check-input" type="checkbox" id="footer">
                 <label class="form-check-label" for="footer">
                     Footer
                 </label>
@@ -112,92 +111,86 @@
 
 
         function showTitle() {
-            output = prepareTitle();
-            //sourcecode = `&lt;h1&gt;Hello output</h1>`;//use decodeEntity
-            output_displayer.appendChild(output);
-            sourcecode = document.getElementById('element_title').outerHTML;
-            source_displayer.innerText = sourcecode;
+            output_displayer.appendChild(prepareTitle());
         }
         function removeTitle() {
             document.getElementById('element_title').remove();
 
         }
         function showText() {
-            output = prepareText();
-            output_displayer.appendChild(output);
-            sourcecode = document.getElementById('element_text').outerHTML;
-            var br = document.createElement('br');
-            source_displayer.append(br);
-            source_displayer.append(sourcecode);
+            output_displayer.appendChild(prepareText());
         }
         function removeText() {
             document.getElementById('element_text').remove();
         }
         function showButton() {
+            output_displayer.appendChild(prepareButton());
 
-            output = prepareButton();
-            output_displayer.appendChild(output);
-            sourcecode = document.getElementById('element_button').outerHTML;
-            var br = document.createElement('br');
-            source_displayer.append(br);
-            source_displayer.append(sourcecode);
         }
         function removeButton() {
             document.getElementById('element_button').remove();
         }
-        function addHeader() {
-             output_head.insertBefore(prepareCardHeader(),output_head.firstChild);
-            sourcecode = document.getElementsByClassName('card-header')[0].outerHTML;
-            var br = document.createElement('br');
-            source_displayer.append(br);
-            source_displayer.append(sourcecode);
+        function showImage() {
+            output_head.insertBefore(prepareImage(), output_head.firstChild)
+
         }
-        function removeHeader(){
+        function addHeader() {
+            if (document.querySelector('.bg-image')) {
+                output_head.insertBefore(prepareCardHeader(), output_displayer);
+            } else {
+                output_head.insertBefore(prepareCardHeader(), output_head.firstChild);
+            }
+        }
+        function removeHeader() {
             document.getElementsByClassName('card-header')[0].remove()
         }
-        function addFooter(){
-        output_head.appendChild(prepareCardFooter());
+        function addFooter() {
+            output_head.appendChild(prepareCardFooter());
         }
-        function removeFooter(){
+        function removeFooter() {
             document.getElementsByClassName('card-footer')[0].remove();
         }
-        function  addCenter(){
+        function addCenter() {
             output_head.classList.add('text-center');
         }
-        function removeCenter(){
+        function removeCenter() {
             output_head.classList.remove('text-center');
         }
-        function addBorder(){
-            output_head.classList.add('border','border-primary','shadow-0');
+        function addBorder() {
+            output_head.classList.add('border', 'border-primary', 'shadow-0');
         }
-        function removeBorder(){
-            output_head.classList.remove('shadow-0','border-primary','border');
-            
+        function removeBorder() {
+            output_head.classList.remove('shadow-0', 'border-primary', 'border');
+
         }
-        function addWhiteText(){
+        function addWhiteText() {
             output_head.classList.add('text-white');
         }
-        function removeWhiteText(){
+        function removeWhiteText() {
             output_head.classList.remove('text-white');
         }
-        function addBackgroundColor(color){
-          output_head.setAttribute('style', 'background-color: ' + color);
+        function addBackgroundColor(color) {
+            output_head.setAttribute('style', 'background-color: ' + color);
         }
-        function Reset(){
-           let input=document.querySelectorAll('.form-check-input');
-            for(index in input){
+        function Reset() {
+            let input = document.querySelectorAll('.form-check-input');
+            for (index in input) {
                 input[index].checked = false;
             }
-            output_head.classList.remove('text-center','border','border-primary','shadow-0','text-white');
+            output_head.classList.remove('text-center', 'border', 'border-primary', 'shadow-0', 'text-white');
             output_head.removeAttribute('style');
-            while(output_displayer.lastChild){
+            while (output_displayer.lastChild) {
                 output_displayer.removeChild(output_displayer.lastChild);
             }
+            while (source_displayer.lastChild) {
+                source_displayer.removeChild(source_displayer.lastChild);
+            }
             document.querySelector('.card-header').remove();
-           if(output_displayer.nextElementSibling){
-            output_displayer.nextElementSibling.remove();
-           }
-         
+            if (output_displayer.nextElementSibling) {
+                output_displayer.nextElementSibling.remove();
+            }
+
+
         }
         function toggle(e) {
 
@@ -224,7 +217,7 @@
 
             }
             if (e.srcElement.id == 'header') {
-               
+
                 if (e.srcElement.checked) {
                     addHeader();
                 } else {
@@ -232,51 +225,54 @@
                 }
             }
 
-            // if (e.srcElement.id = 'image') {
-            //     if (e.srcElement.checked) {
+            if (e.srcElement.id == 'image') {
+                if (e.srcElement.checked) {
+                    showImage();
+                    console.log("image loaded");
+                } else {
 
-            //     } else {
+                }
+            }
 
-            //     }
-            // }
-           
             if (e.srcElement.id == 'footer') {
                 if (e.srcElement.checked) {
                     addFooter();
                 } else {
-                 removeFooter();
+                    removeFooter();
                 }
             }
-            if (e.srcElement.id =='center') {
+            if (e.srcElement.id == 'center') {
                 if (e.srcElement.checked) {
-                  addCenter();
+                    addCenter();
                 } else {
-               removeCenter();
+                    removeCenter();
                 }
             }
             if (e.srcElement.id == 'border') {
                 if (e.srcElement.checked) {
                     addBorder();
                 } else {
-                 removeBorder();
+                    removeBorder();
                 }
             }
             if (e.srcElement.id == 'white-text') {
                 if (e.srcElement.checked) {
-                   addWhiteText();
+                    addWhiteText();
 
-                }else {
+                } else {
                     removeWhiteText();
                 }
             }
-            if(e.srcElement.id=='colorpicker') {
-             addBackgroundColor(e.srcElement.value);
-             
+            if (e.srcElement.id == 'colorpicker') {
+                addBackgroundColor(e.srcElement.value);
+
             }
+            decodeEntity();
 
         }
         function decodeEntity() {
-            //?
+            let code = document.querySelector('.card').outerHTML;
+            source_displayer.innerText = code
         }
         function prepareTitle() {
             //?
@@ -308,10 +304,22 @@
             return div;
         }
         function prepareCardFooter() {
-         let div=document.createElement("div");
-         div.setAttribute("class", "card-footer");
-         div.innerHTML ="2 Days ago";
-         return div;
+            let div = document.createElement("div");
+            div.setAttribute("class", "card-footer");
+            div.innerHTML = "2 Days ago";
+            return div;
+        }
+
+        function prepareImage() {
+            let div = document.createElement("div");
+            div.setAttribute("class", "bg-image");
+            div.classList.add('hover-overlay', 'ripple');
+            div.setAttribute("data-mdb-ripple-color", "light");
+            let image = document.createElement("img");
+            image.src = "https://mdbootstrap.com/img/new/standard/nature/111.webp"
+            image.setAttribute("class", "img-fluid");
+            div.appendChild(image);
+            return div;
         }
 
 
@@ -323,9 +331,8 @@
         button.addEventListener("click", toggle, false);
         let header = document.getElementById('header');
         header.addEventListener("click", toggle, false);
-        // let image = document.getElementById('image');
-        // image.addEventListener("click", toggle, false);
-        
+        let image = document.getElementById('image');
+        image.addEventListener("click", toggle, false);
         let footer = document.getElementById('footer');
         footer.addEventListener("click", toggle, false);
         let center = document.getElementById('center');
@@ -335,11 +342,11 @@
         let whiteText = document.getElementById('white-text');
         whiteText.addEventListener("click", toggle, false);
 
-        let reset=document.getElementById('reset');
-        reset.addEventListener("click",Reset, false);
+        let reset = document.getElementById('reset');
+        reset.addEventListener("click", Reset, false);
 
-        let color=document.getElementById('colorpicker');
-        color.addEventListener("change",toggle, false);
+        let color = document.getElementById('colorpicker');
+        color.addEventListener("change", toggle, false);
 
     </script>
 
