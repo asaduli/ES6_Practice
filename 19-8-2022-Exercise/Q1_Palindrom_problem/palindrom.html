@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <label for="text">Enter a String to check whether a String is palindrom or not?</label><br><br>
+        <input type="text" id="text"  placeholder="String link 'gagag' ">
+        <button type="submit" id="btn">Submit</button>
+        <p id="demo" style="color:purple;"></p>
+
+    </div>
+    
+    <script>
+        function checkPalindrome(string) {
+            const len = string.length;
+            let substr1 = "", substr2 = "";
+            for (let i = 0; i < len / 2; i++) {
+                substr1 = substr1 + string.charAt(i);
+                substr2 = substr2 + string.charAt(len - (i + 1));
+                //   console.log(string.charAt(i));
+                //   console.log(string.charAt(len-(i+1)))
+            }
+            if (substr1 === substr2) {
+                return "String is Palindrome";
+            }
+            else {
+                return "String is not Palindrome";
+            }
+        }
+         
+        function print(){
+            let text=document.getElementById("text").value;
+            let demo = document.getElementById("demo");
+            if(text===""){
+               demo.innerHTML="Please enter a String";
+            }
+            else{
+                document.getElementById("demo").innerText=checkPalindrome(text);
+            }      
+        }
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click",print,false)
+  
+
+    </script>
+</body>
+
+</html>
