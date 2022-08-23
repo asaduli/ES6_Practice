@@ -15,14 +15,14 @@
     <div class="row mt-5 container-fluid">
         <div class="col-md-7">
             <div class="card row" id="card_head">
-                <div id="image"></div>
-                <div id="header"></div>
+                <div id="img"></div>
+                <div id="head"></div>
                 <div class="card-body" id="output_displayer">
                     <h5 id="card_title"></h5>
                     <p id="card_text"></p>
                     <div id="btn"></div>
                 </div>
-                <div id="footer"></div>
+                <div id="foot"></div>
             </div>
             <div class="row">
                 <pre id="source_displayer">
@@ -100,7 +100,7 @@
         </div>
     </div>
         <script>
-        let output = null;
+    
         let sourcecode = null;
         let output_head = document.getElementById('card_head');
         let output_displayer = document.getElementById("output_displayer")
@@ -113,50 +113,75 @@
             card_title.innerHTML = "Card Title"  
         }
         function removeTitle() {
-            document.getElementById('card_title').remove();
+            document.getElementById('card_title').classList.remove('card_title');
+            document.getElementById('card_title').innerHTML ="";
 
         }
         function showText() {
-           
+           document.getElementById('card_text').setAttribute("class",'card_text');
+           document.getElementById('card_text').innerHTML ='This is card Text, please enter your card text . Show some text'
         }
         function removeText() {
-            document.getElementById('element_text').innerHTML.remove();
+            document.getElementById('card_text').classList.remove('card_text');
+            document.getElementById('card_text').innerHTML="";
         }
         function showButton() {
-            output_displayer.appendChild(prepareButton());
-
+            let btn=document.getElementById('btn');
+            let button= document.createElement("button");
+            button.setAttribute("class", "btn btn-primary");
+            button.setAttribute("type", "button");
+            button.innerHTML="Button";
+            btn.appendChild(button);
         }
         function removeButton() {
-            document.getElementById('element_button').remove();
+            document.getElementById('btn').innerHTML="";
         }
         function showImage() {
-            output_head.insertBefore(prepareImage(), output_head.firstChild)
-
+           let div=document.getElementById('img');
+           div.setAttribute("class", "bg-image");
+            div.classList.add('hover-overlay', 'ripple');
+            div.setAttribute("data-mdb-ripple-color", "light");
+            let image = document.createElement("img");
+            image.src = "https://mdbootstrap.com/img/new/standard/nature/111.webp"
+            image.setAttribute("class", "img-fluid");
+            div.appendChild(image);      
         }
+        function removeImage(){
+
+            let img=document.getElementById('img');
+            img.removeAttribute("class");
+            img.removeAttribute("data-mdb-ripple-color");
+            img.innerHTML="";
+        }
+
         function addHeader() {
-            if (document.querySelector('.bg-image')) {
-                output_head.insertBefore(prepareCardHeader(), output_displayer);
-            } else {
-                output_head.insertBefore(prepareCardHeader(), output_head.firstChild);
-            }
+          let header=document.getElementById("head");
+          header.classList.add("card-header");
+          header.innerHTML="Featured";
         }
         function removeHeader() {
-            document.getElementsByClassName('card-header')[0].remove()
+           let header=document.getElementById("head");
+           header.removeAttribute("class");
+           header.innerHTML="";
         }
         function addFooter() {
-            output_head.appendChild(prepareCardFooter());
+            let footer=document.getElementById("foot");
+            footer.setAttribute("class", "card-footer");
+            footer.innerHTML="2 Days ago";
         }
         function removeFooter() {
-            document.getElementsByClassName('card-footer')[0].remove();
+            let footer=document.getElementById("foot");
+            footer.removeAttribute("class");
+            footer.innerHTML="";
         }
         function addCenter() {
-            output_head.classList.add('text-center');
+           output_head.classList.add('text-center');
         }
         function removeCenter() {
             output_head.classList.remove('text-center');
         }
         function addBorder() {
-            output_head.classList.add('border', 'border-primary', 'shadow-0');
+         output_head.classList.add('border', 'border-primary', 'shadow-0');
         }
         function removeBorder() {
             output_head.classList.remove('shadow-0', 'border-primary', 'border');
@@ -226,10 +251,11 @@
 
             if (e.srcElement.id == 'image') {
                 if (e.srcElement.checked) {
-                    showImage();
+                     showImage();
                     console.log("image loaded");
                 } else {
-
+                    removeImage();
+                  console.log("image not loaded");
                 }
             }
 
@@ -274,46 +300,46 @@
             source_displayer.innerText = code
         }
       
-        function prepareText() {
-            let p = document.createElement("p");
-            p.setAttribute("id", "element_text");
-            p.innerHTML = "this is card text"
-            return p;
-        }
+        // function prepareText() {
+        //     let p = document.createElement("p");
+        //     p.setAttribute("id", "element_text");
+        //     p.innerHTML = "this is card text"
+        //     return p;
+        // }
 
-        function prepareButton() {
-            let btn = document.createElement("button");
-            btn.setAttribute("class", "btn btn-primary");
-            btn.setAttribute("id", "element_button");
-            btn.innerHTML = "Button";
-            return btn;
+        // function prepareButton() {
+        //     let btn = document.createElement("button");
+        //     btn.setAttribute("class", "btn btn-primary");
+        //     btn.setAttribute("id", "element_button");
+        //     btn.innerHTML = "Button";
+        //     return btn;
 
-        }
-        function prepareCardHeader() {
+        // }
+        // function prepareCardHeader() {
 
-            let div = document.createElement("div");
-            div.setAttribute("class", "card-header");
-            div.innerHTML = "Featured";
-            return div;
-        }
-        function prepareCardFooter() {
-            let div = document.createElement("div");
-            div.setAttribute("class", "card-footer");
-            div.innerHTML = "2 Days ago";
-            return div;
-        }
+        //     let div = document.createElement("div");
+        //     div.setAttribute("class", "card-header");
+        //     div.innerHTML = "Featured";
+        //     return div;
+        // }
+        // function prepareCardFooter() {
+        //     let div = document.createElement("div");
+        //     div.setAttribute("class", "card-footer");
+        //     div.innerHTML = "2 Days ago";
+        //     return div;
+        // }
 
-        function prepareImage() {
-            let div = document.createElement("div");
-            div.setAttribute("class", "bg-image");
-            div.classList.add('hover-overlay', 'ripple');
-            div.setAttribute("data-mdb-ripple-color", "light");
-            let image = document.createElement("img");
-            image.src = "https://mdbootstrap.com/img/new/standard/nature/111.webp"
-            image.setAttribute("class", "img-fluid");
-            div.appendChild(image);
-            return div;
-        }
+        // function prepareImage() {
+        //     let div = document.createElement("div");
+        //     div.setAttribute("class", "bg-image");
+        //     div.classList.add('hover-overlay', 'ripple');
+        //     div.setAttribute("data-mdb-ripple-color", "light");
+        //     let image = document.createElement("img");
+        //     image.src = "https://mdbootstrap.com/img/new/standard/nature/111.webp"
+        //     image.setAttribute("class", "img-fluid");
+        //     div.appendChild(image);
+        //     return div;
+        // }
 
 
         let title = document.getElementById("title")
