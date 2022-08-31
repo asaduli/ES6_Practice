@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Filling Station Near Hemayetpur</title>
+  </head>
+
+  <body onload = "loadMap()">
+    <h2>Filling Station in Savar</h2>
+    <div id = "map" style = "width:100%; height:600px;"></div>
+      <script>
+
+        // fake JSON call
+        function getJSONMarkers() {
+          const markers = [
+            {
+              name:  "M/S. Kofiluddin Filling Station",
+              location: [23.794240860956744, 90.2798146048237]
+            },
+            {
+              name: "Sony Filling Station",
+              location: [23.794170049208216, 90.2785800524993]
+            },
+            {
+              name: "Nasim Filling Station",
+              location: [23.794004821650756, 90.2776513743547]
+            },
+            {
+              name:"Anwar Filling Station",
+              location:[23.794707398142418, 90.27698217139985]
+            }
+          ];
+          return markers;
+        }
+
+        function loadMap() {
+          // Initialize Google Maps
+          const mapOptions = {
+            center:new google.maps.LatLng(23.79920155343989, 90.26637415143081),
+            zoom: 14
+          }
+          const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+          // Load JSON Data
+          const hotelMarkers = getJSONMarkers();
+
+          // Initialize Google Markers
+          for(hotel of hotelMarkers) {
+            let marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(hotel.location[0], hotel.location[1]),
+              title: hotel.name
+            })
+          }
+        }
+      </script>
+      <script src = "https://maps.googleapis.com/maps/api/js"></script>
+  </body>
+</html>
