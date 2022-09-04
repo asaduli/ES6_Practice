@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Blur Event</title>
+</head>
+<body>
+    <label>Enter a text to make Uppercase</label><br>
+    <input type="text" id="text">
+    
+    <script>
+      let x=document.getElementById("text");
+     function makeUpercase(){
+        x.value=x.value.toUpperCase();
+     }
+    
+     x.addEventListener("blur", makeUpercase, false);
+    </script>
+</body>
+</html>
