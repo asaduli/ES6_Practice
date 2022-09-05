@@ -12,7 +12,7 @@
 
 
     <button id="btn">Enter Country Number</button><br><br>
-    <div id="flags" style="margin-left:50px;"></div>
+    <div id="flags"></div>
 
     <script>
 
@@ -1356,20 +1356,29 @@
             showFlag();
         }
 
-        function makeImageElement(src) {
+        function makeImageElement(src,cap) {
 
             let image = document.createElement("img");
+            let p=document.createElement("p");
+            let div = document.createElement("div");
+            div.setAttribute("style", "display: inline-block;");
             image.src = src;
+            p.innerHTML = cap;
             image.setAttribute("width", "120px")
             image.setAttribute("height", "80px")
             image.setAttribute("style", "margin-right:20px;margin-bottom:20px;margin-left:5px;")
-            let div = document.getElementById("flags")
+            let flag = document.getElementById("flags")
             div.appendChild(image)
+            div.appendChild(p);
+            flag.appendChild(div)
+  
+          
         }
 
         function showFlag() {
             for (let i = 0; i < number; i++) {
-                makeImageElement(flags[i].flag);
+                makeImageElement(flags[i].flag,flags[i].name);
+
             }
         }
 
