@@ -10,12 +10,9 @@
 
 <body>
 
-   
-    <button id="btn">Enter Country Number</button>
-    <div id="flags"></div>
 
-
-
+    <button id="btn">Enter Country Number</button><br><br>
+    <div id="flags" style="margin-left:50px;"></div>
 
     <script>
 
@@ -1344,57 +1341,45 @@
 
 
         let number;
-        function getNumber(){
+        function getUserNumber() {
 
-            let val=prompt("Enter number of country to show flag");
+            let val = prompt("Enter number of country to show flag");
 
-            if(val!=null){
-                number=parseInt(val);
-                document.getElementById("flags").innerHTML=""
-
+            if (val != null) {
+                number = parseInt(val);
+                document.getElementById("flags").innerHTML = ""
             }
-            else{
-                document.getElementById("flags").innerHTML=""
-                number=flags.length;
+            else {
+                document.getElementById("flags").innerHTML = ""
+                number = flags.length;
             }
-            showFlag();   
+            showFlag();
         }
 
+        function makeImageElement(src) {
 
-        document.getElementById("btn").addEventListener("click",getNumber,false);
+            let image = document.createElement("img");
+            image.src = src;
+            image.setAttribute("width", "120px")
+            image.setAttribute("height", "80px")
+            image.setAttribute("style", "margin-right:20px;margin-bottom:20px;margin-left:5px;")
+            let div = document.getElementById("flags")
+            div.appendChild(image)
+        }
 
-
-        function showFlag(){
-          if(number==undefined){
-
-            for(flag of flags){
-
-                data = `<div style="float: left; width: 200px; margin: 5px; border: 1px solid; text-align: center;">
-          <img src="${flag.flag}" width="180px" height="100px"> 
-          <p>${flag.name}</p>
-          </div>`;
-        
-        document.getElementById("flags").innerHTML +=data;
-
+        function showFlag() {
+            for (let i = 0; i < number; i++) {
+                makeImageElement(flags[i].flag);
             }
-          } else{
-
-             for(let i=0;i<number;i++){
-                data = `<div style="float: left; width: 200px; margin: 5px; border: 1px solid; text-align: center;">
-          <img src="${flags[i].flag}" width="180px" height="100px"> 
-          <p>${flags[i].name}</p>
-          </div>`;
-        
-        document.getElementById("flags").innerHTML +=data;
-
-             }
-          }
         }
 
-        if(number==undefined){
-             showFlag();
+        document.getElementById("btn").addEventListener("click", getUserNumber, false);
+
+        if (number == undefined) {
+            number = flags.length;
+            showFlag();
         }
-     
+
 
     </script>
 </body>
