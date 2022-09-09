@@ -1,62 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Crud</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Crud</title>
 </head>
+
 <body>
+
+
+  <div style="margin-left:35%;">
+
+    <h3>JS Crud Practice</h3> <br><br>
+
+    <form method="POST" action="javascript:void(0)" onsubmit="addCountry()" >
+
+      <input type="text" placeholder="Enter New Country" id="name">
+      <input type="submit" value="Add New">
+    </form><br><br><br>
+
+
+    <table border="1px">
+      <thead>
+        <th>SL</th>
+        <th>Country Name</th>
+        <th>Action</th>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+  <script>
+
+    let coutries = ['Argentina', 'Barbados', 'Bolivia', 'Bangladesh', 'Canada', 'China', 'Colombia', 'France', 'Germany']
+
+
+
+    function viewCountry() {
+      let tbody = document.getElementById('tbody');
+        let data='';
+      for (country in coutries) {
+
+        data +=`<tr>`
+        data +=`<td> ${parseInt(country)+1} </td>`
+        data +=`<td> ${coutries[country]} </td>`
+        data +=`<td> <button>Edit</button> <button onclick="deleteCountry(`+country+`)">Delete</button></td>`
+       tbody.innerHTML = data;
+      }
+    }
+
+     function addCountry(){
     
-    
-    <div style="margin-left:35%;">
-  
-        <h3>JS Crud Practice</h3> <br><br>
+      let  element=document.getElementById("name");
+      let country=element.value;
+      console.log(country);
+      
+      if(country){
 
-        <form>
+        coutries.push(country.trim());
+        element.value='';
+        viewCountry();
+      }
+     }
 
-          <input type="text" placeholder="Enter New Country" id="country">
-          <button type="submit" >Add</button>
-        </form><br><br><br>
+      function deleteCountry(index){
+        
+        console.log(index);
+        coutries.splice(index, 1);
+        viewCountry();
+      }
 
+     viewCountry();
 
-        <table border="1px">
-            <thead>
-              <th>SL</th>
-              <th>Country Name</th>
-              <th>Action</th>
-            </thead>
-            <tbody id="tbody">
-              
-            </tbody>
-        </table>
-
-
-
-    </div>
-
-    <script>
-
-        let coutries=['Argentina', 'Barbados', 'Bolivia', 'Bangladesh', 'Canada', 'China', 'Colombia', 'France', 'Germany']
-         let tbody=document.getElementById('tbody');
-
-         for(country in coutries){
-
-            let row=document.createElement('tr');
-
-           let td1=document.createElement('td');
-           let td2=document.createElement('td');
-           let td3=document.createElement('td');
-           td1.innerHTML=parseInt(country)+1;
-           td2.innerHTML=coutries[country];
-           td3.innerHTML=`<button type="button">Edit</button> <button type="button">Delete</button>`;
-           row.appendChild(td1);
-           row.appendChild(td2);
-           row.appendChild(td3);
-           tbody.appendChild(row);
-           
-         }
-    </script>
+  </script>
 
 </body>
+
 </html>
