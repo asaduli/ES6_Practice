@@ -1,0 +1,155 @@
+
+  {"name": "api list",
+  "content": {
+    "bitcoin": [
+      {
+        "name": "Latest Block",
+        "url": "https://blockchain.info/latestblock"
+      },
+      {
+        "name": "unconfirmed transactions",
+        "url": "https://blockchain.info/unconfirmed-transactions?format=json"
+      }
+    ],
+    "climate": [
+      {
+        "name": "Global Temperature Anomaly",
+        "url": ""
+      },
+      {
+        "name": "Us Annual Average Temperature & Anomaly",
+        "url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series/110-tavg-ytd-12-1895-2016.json?base_prd=true&begbaseyear=1901&endbaseyear=2000",
+        "": {}
+      }
+    ],
+    "crime": [
+      {
+        "name": "Street Crime Dates Uk",
+        "url": "https://data.police.uk/api/crimes-street-dates"
+      },
+      {
+        "name": "List of Forces UK",
+        "url": "https://data.police.uk/api/forces"
+      }
+    ],
+    "currency": [
+      {
+        "name": "Exchange Rate USD",
+        "url": "https://api.exchangerate-api.com/v4/latest/USD"
+      },
+      {
+        "name": "Exhange Rate GBP",
+        "url": "https://api.exchangerate-api.com/v4/latest/GBP"
+      }
+    ],
+    "food": [
+      {
+        "name": "FDA product recals",
+        "url": "https://api.fda.gov/food/enforcement.json"
+      },
+      {
+        "name": "Open Food Facts",
+        "url": "https://world.openfoodfacts.org/api/v0/product/5060292302201.json"
+      }
+    ],
+    "gaming": [
+      {
+        "name": "Pokemon by Number",
+        "url": "https://pokeapi.co/api/v2/pokemon/1/"
+      },
+      {
+        "name": "Pokemon by Types",
+        "url": "https://pokeapi.co/api/v2/type/1/"
+      }
+    ],
+    "github_api": [
+      {
+        "name": "Emojis",
+        "url": "https://api.github.com/emojis"
+      },
+      {
+        "name": "Events",
+        "url": "https://api.github.com/events"
+      },
+      {
+        "name": "Meta",
+        "url": "https://api.github.com/meta"
+      }
+    ],
+    "": {},
+    "governments": [
+      {
+        "name": "US Current Sinator",
+        "ulr": "https://www.govtrack.us/api/v2/role?current=true&role_type=senator"
+      }
+    ],
+    "government": [
+      {},
+      {
+        "name": "US Current Representatives",
+        "url": "https://www.govtrack.us/api/v2/role?current=true&role_type=representative&limit=438"
+      }
+    ],
+    "historical_events": [
+      {
+        "name": "English",
+        "url": "https://www.vizgr.org/historical-events/search.php?format=json&begin_date=-3000000&end_date=20151231&lang=en"
+      },
+      {
+        "name": "German",
+        "url": "https://www.vizgr.org/historical-events/search.php?format=json&begin_date=-3000000&end_date=20151231&lang=de"
+      }
+    ],
+    "nasa": [
+      {
+        "name": "People in Space Now",
+        "url": "http://api.open-notify.org/astros.json"
+      },
+      {
+        "name": "Earth Meteorite Landings",
+        "url": "https://data.nasa.gov/resource/y77d-th95.json"
+      }
+    ],
+    "nobel_prize": [
+      {
+        "name": "Prize Winner",
+        "url": "https://github.com/jdorfman/awesome-json-datasets#climate"
+      },
+      {
+        "name": "Nobel Prize Winning Country",
+        "url": "https://api.nobelprize.org/v1/country.json"
+      }
+    ],
+    "population": [
+      {
+        "name": "Chaina",
+        "url": "http://api.worldbank.org/v2/countries/CHN/indicators/SP.POP.TOTL?per_page=5000&format=json"
+      },
+      {
+        "name": "India",
+        "url": "http://api.worldbank.org/v2/countries/IND/indicators/SP.POP.TOTL?per_page=5000&format=json"
+      },
+      {
+        "name": "USA",
+        "url": "http://api.worldbank.org/v2/countries/USA/indicators/SP.POP.TOTL?per_page=5000&format=json"
+      }
+    ],
+    "gdp": [
+      {
+        "name": "USA",
+        "url": "http://api.worldbank.org/v2/countries/USA/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json"
+      },
+      {},
+      {
+        "name": "India",
+        "url": "http://api.worldbank.org/v2/countries/IND/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json"
+      }
+    ],
+    "name": "Chaina",
+    "url": "http://api.worldbank.org/v2/countries/CHN/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json",
+    "reddit": {},
+    "travel": {},
+    "tv_shows": {},
+    "movies": {}
+  }
+}

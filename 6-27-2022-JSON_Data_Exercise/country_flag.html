@@ -1341,10 +1341,9 @@
 
 
         let number;
+
         function getUserNumber() {
-
             let val = prompt("Enter number of country to show flag");
-
             if (val != null) {
                 number = parseInt(val);
                 document.getElementById("flags").innerHTML = ""
@@ -1356,10 +1355,9 @@
             showFlag();
         }
 
-        function makeImageElement(src,cap) {
-
+        function makeImageElement(src, cap) {
             let image = document.createElement("img");
-            let p=document.createElement("p");
+            let p = document.createElement("p");
             let div = document.createElement("div");
             div.setAttribute("style", "display: inline-block;");
             image.src = src;
@@ -1371,14 +1369,13 @@
             div.appendChild(image)
             div.appendChild(p);
             flag.appendChild(div)
-  
-          
+
+
         }
 
         function showFlag() {
             for (let i = 0; i < number; i++) {
-                makeImageElement(flags[i].flag,flags[i].name);
-
+                makeImageElement(flags[i].flag, flags[i].name);
             }
         }
 
