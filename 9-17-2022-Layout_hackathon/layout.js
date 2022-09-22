@@ -1,5 +1,5 @@
 
-let Pondit = {};
+let Pondit = {}; //Creating Namespace
 
 Pondit.Layout = {
     header: () => {
@@ -59,13 +59,13 @@ Pondit.Layout = {
 
     },
 
-    buildStructure: () => {
+    buildStructure: () => {   //for fixed body structure  
         let body = document.getElementsByTagName('body')[0];
         body.setAttribute("style", "display: flex; min-height: 100vh; flex-direction: column; margin: 0; box-sizing: border-box; ");
 
     },
 
-    display: () => {
+    display: () => { //for displaying elements 
         let display = document.getElementsByTagName('body')[0];
         display.appendChild(Pondit.Layout.header());
         display.appendChild(Pondit.Layout.main_div());
