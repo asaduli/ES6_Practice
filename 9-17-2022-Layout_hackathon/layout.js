@@ -61,7 +61,7 @@ Pondit.Layout = {
 
     buildStructure: () => {   //for fixed body structure  
         let body = document.getElementsByTagName('body')[0];
-        body.setAttribute("style", "display: flex; min-height: 100vh; flex-direction: column; margin: 0; box-sizing: border-box; ");
+        body.setAttribute("style", "display: flex; min-height: 100vh; flex-direction: column; margin: 0; box-sizing: border-box;text-align: center;");
 
     },
 
