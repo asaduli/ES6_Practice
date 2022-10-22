@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Selector</title>
+
+    <style>
+        /* this is the section for css selectors */
+
+        /* All element selector with *  */
+        * {
+            background-color: cyan;
+        }
+
+        /* class Selector */
+        .intro {
+            font-style: italic;
+        }
+
+        /* Select by ID */
+        #first_name {
+            font-family: 'Ubuntu', sans-serif;
+
+        }
+
+        #last_name {
+            font-weight: bold;
+        }
+
+        /* multiple selector */
+        h1,
+        p {
+            margin: 0;
+        }
+
+        /* selecting inner elements */
+        /* Selecting all the p inside div element */
+        /* example-1 */
+        div p {
+            color: red;
+        }
+
+        /* example-2 */
+        div>p {
+            margin: 0px;
+        }
+
+        /* Selecting next first element */
+        /* sleleting first p element after ul */
+        ul+p {
+            background-color: silver;
+        }
+
+        /* selecting all the p element after ul */
+
+        ul~p {
+            color: purple;
+        }
+
+        /* element.class selector */
+        p.myquote {
+            font-weight: bold;
+        }
+
+        /* Attribute Selector*/
+        /* selectiong all the elements with the attribute of id */
+        [id] {
+            background-color: blue;
+        }
+
+        /* Selects all elements with id="address" */
+        [id=address] {
+            text-align: center;
+
+        }
+
+        /* Selects every  element whose attribute value begins with 'f'*/
+        [id^=f] {
+            margin-left: 100px;
+        }
+
+        /* Selects every  element whose attribute value ends with 'ess'*/
+        [id$=ess] {
+            padding: 5px;
+        }
+
+        /* Selects all elements with a lang attribute value equal to "lang" or starting with "lang-" */
+        [id|=lang] {
+            justify-content: center;
+        }
+
+        /* Selects every  element whose id attribute value contains the substring "s" */
+
+        [id*=s] {
+            line-height: 40px;
+        }
+
+        /* Selects every <a> element whose href attribute value contains the substring "com"  */
+        a[href*="com"] {
+            color: orange;
+        }
+
+        /* Selects all elements with a title attribute containing the word "beautiful" */
+        [title~=beautiful] {
+            background-color: crimson;
+
+        }
+
+        /* Clone selector */
+
+        /* Selects the active link */
+        a:active {
+            background-color: darkturquoise;
+        }
+        /* Selects links on mouse over */
+        a:hover{
+            background-color: gold;
+
+        }
+        /* Selects all unvisited links */
+        a:link{
+         
+            margin: 0;
+            
+        }
+         /* 	Selects all visited links */
+        a:visited{
+         margin: 0;
+
+        }
+        /* Selects the element that is in full-screen mode */
+
+        :fullscreen{
+       margin: 0;
+        }
+
+        /* 	Selects every checked <input> element */
+        input:checked {
+            background-color: olive;
+        }
+
+        /* Selects every disabled <input> element */
+        input:disabled {
+            margin: 20px;
+        }
+        /* Selects input elements with the "required" attribute specified */
+        input:required {
+         background-color: mediumspringgreen;
+        }
+        /* Selects all input elements with a valid value */
+        input:valid {
+          margin: 0;
+        }
+
+        /* Selects input elements with the "readonly" attribute specified */
+        input:read-only {
+         margin: 0;
+
+        }
+        /* Selects input elements with the "placeholder" attribute specified */
+
+        input::placeholder{
+            margin: 0;
+
+        }
+        /* Selects the input element which has focus */
+        input:focus{
+            margin: 0;
+
+        }
+
+        /* Selects every <p> element that is the first child of its parent */
+        p:first-child {
+            text-align: center;
+        }
+
+        /* Selects every <p> element that is the last child of its parent */
+        p:last-child {
+            font-size: larger;
+        }
+
+        /* Selects every <p> element that is the only child of its parent */
+        p:only-child {
+            font-weight: bold;
+        }
+
+        /* Selects the first line of every <p> element */
+        p::first-line {
+            margin-left: 25%;
+        }
+
+        /* Selects every <p> element with a lang attribute equal to "it" (Italian) */
+        p:lang(it) {
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Selector Practice</h1>
+    <div class="intro">
+        <p>My Name is <span id="first_name">Asadul</span> <span id="last_name">Islam</span></p>
+
+        <p id="address">Hemayetpur, Savar, Dhaka</p>
+        <p>I like progrmming</p>
+
+    </div>
+
+    <div class="intro">
+        <p>Hello</p>
+
+    </div>
+
+    <ul id="language">
+        <li>C</li>
+        <li>Java</li>
+        <li>PHP</li>
+        <li>JavaScript</li>
+
+    </ul>
+
+    <a href="cssSelector.html">Index</a>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://github.com">GitHub</a>
+    <a href="http://gitlab.com">GitLab</a>
+
+    <p class="myquote">I like all this language <br>
+        But I like Java Most</p>
+
+    <p lang="it" title="Hello beautiful">Laravel</p>
+    <h3>We all are human after all</h3>
+    <p><b>Life is too short.Be Human.Be generous</b></p>
+    <table border="1px">
+        <thead>
+            <th>Skill Name</th>
+            <th>Language/Framework</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Progrmaing</td>
+                <td>C, Java, PHP, JavaScript</td>
+            </tr>
+            <tr>
+                <td>Framework</td>
+                <td>Laravel, Spring</td>
+            </tr>
+            <tr>
+                <td>Front-End</td>
+                <td>HTML,CSS,Bootstarp</td>
+            </tr>
+            <tr>
+                <td>Database</td>
+                <td>MySQL, Oracle</td>
+            </tr>
+        </tbody>
+    </table><br>
+
+    <form action="" id="form">
+        <label for="name">Name</label>
+        <input type="text" id="name"><br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email"><br><br>
+
+        <label><b>Select your Language : </b></label>
+        <select name="language" id="language">
+            <option value="1">Java</option>
+            <option value="2">PHP</option>
+            <option value="3">JavaScript</option>
+        </select>
+        <br>
+        <br>
+
+        <label><b>Select Gender:</b></label><br>
+        <input type="radio" name="Male" id="male">
+        <label for="male">Male</label>
+        <input type="radio" name="Female" id="female">
+        <label for="female">Female</label>
+        <input type="radio" name="Other" id="other">
+        <label for="other">Others</label><br>
+
+        <label><b>Select your Category</b></label><br>
+        <label for="front">Front-End Developer: </label>
+        <input type="checkbox" name="developer_type" id="front"><br>
+        <label for="back">Back-End Developer: </label>
+        <input type="checkbox" name="developer_type" id="back"><br>
+        <label for="full_stack">Full Stack Developer: </label>
+        <input type="checkbox" name="developer_type" id="full_stack">
+    </form>
+
+</body>
+
+</html>
