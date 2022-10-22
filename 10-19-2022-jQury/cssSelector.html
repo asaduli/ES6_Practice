@@ -54,6 +54,8 @@
             background-color: silver;
         }
 
+        /* selecting all the p element after ul */
+
         ul~p {
             color: purple;
         }
@@ -61,6 +63,43 @@
         /* element.class selector */
         p.myquote{
             font-weight: bold;
+        }
+
+        /* Attribute Selector*/
+        /* selectiong all the elements with the attribute of id */
+        [id]{
+            background-color: blue;
+        }
+        /* Selects all elements with id="address" */
+        [id=address]{
+            text-align: center;
+
+        }
+        /* Selects every  element whose attribute value begins with 'f'*/
+        [id^=f]{
+           margin-left: 100px;
+        }
+         /* Selects every  element whose attribute value ends with 'ess'*/
+        [id$=ess]{
+          padding: 5px;
+        }
+        /* Selects all elements with a lang attribute value equal to "lang" or starting with "lang-" */
+        [id|=lang]{
+         justify-content: center;
+        }
+        /* Selects every  element whose id attribute value contains the substring "s" */
+        
+        [id*=s]{
+          line-height: 40px;
+        }
+        /* Selects every <a> element whose href attribute value contains the substring "com"  */
+        a[href*="com"]{
+           color:orange;
+        }
+        /* Selects all elements with a title attribute containing the word "beautiful" */
+        [title~=beautiful]{
+             background-color: crimson;
+             
         }
     </style>
 </head>
@@ -70,7 +109,7 @@
     <div class="intro">
         <p>My Name is <span id="first_name">Asadul</span> <span id="last_name">Islam</span></p>
 
-        <p id="adress">Hemayetpur, Savar, Dhaka</p>
+        <p id="address">Hemayetpur, Savar, Dhaka</p>
         <p>I like progrmming</p>
 
     </div>
@@ -87,6 +126,11 @@
         <li>JavaScript</li>
 
     </ul>
+
+    <a href="cssSelector.html">Index</a>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://github.com">GitHub</a>
+    <a href="http://gitlab.com">GitLab</a>
 
     <p class="myquote">I like all this language <br>
         But I like Java Most</p>
