@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div{
+            border: 1px solid;
+        }
+        p{
+            border: 1px dotted;
+        }
+        pre{
+            border: 1px dashed;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <p></p>  
+    <p></p>      
+    </div>
+
+    <p></p>
+    <pre>Pre</pre>
+
+    <span>Span</span>
+
+    <script>
+        $(document).ready(function(){
+
+            // find all the <div>, <p> & <pre> elements
+
+         $('div,p,pre').append('Appending from div, p and pre element');
+           
+        //  find all the elements
+
+        $('*').css('background-color','purple');
+
+        });
+
+    </script>
+    
+</body>
+</html>
