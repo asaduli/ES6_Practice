@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom before()method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+       <p>from existing div</p>
+    </div>
+
+    <script>
+/*
+The jQuery before() method inserts content (new or existing DOM elements) before target element(s) which is specified by a selector.
+
+Syntax:
+$('selector expression').before('content');
+*/
+$('div').before('<p>this is new p before div </p>');
+
+
+    </script>
+
+    
+</body>
+</html>
