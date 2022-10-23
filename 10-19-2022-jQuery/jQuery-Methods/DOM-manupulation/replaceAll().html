@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom replaceAll()method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+
+        <p>This is paragraph</p>
+       
+    </div>
+
+    <p>This is outer paragraph</p>
+
+    <script>
+/*
+The jQuery replaceAll() method replaces all target elements with specified element(s).
+
+Syntax:
+$('content string').replaceAll('selector expression');
+*/
+$('<label>this is label<label>').replaceAll('p');
+
+
+    </script>
+
+    
+</body>
+</html>
