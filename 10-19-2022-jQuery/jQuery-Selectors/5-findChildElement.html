@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Chlid Elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <p>This is p1</p>
+    <p>This is p2</p>
+    <p>This is p3</p>
+    <p>This is p4</p>
+    <p>This is p5</p>
+    <p>This is p6</p>
+    <p>This is p7</p>
+    <p>This is p8</p>
+    <p>This is p9</p>
+    <p>This is p10</p>
+    <p>This is p11</p>
+    <p>This is p12</p>
+    <p>This is p13</p>
+    <p>This is p14</p>
+
+    </div>
+
+    
+    <div>
+        <p>this is from div</p>
+        <p>this is 2nd from div</p>
+        <p>this is 3rd from div</p>
+
+
+    </div>
+    <span>
+        <p>p-</p>
+    </span>
+
+    <script>
+        // Find child element 
+        $(document).ready(() => {
+
+            // Find all <p> elements, which is the first child of its parent element. (parent element can be anything)
+
+            $('p:first-child').append('-appending with first chaild');
+
+            // Selects all <p> elements which is the last child of its parent element. (parent element can be anything)
+
+            $('p:last-child').append('-appending with last chaild');
+            // Selects all <p> elements which is the 5th child of its parent element. (parent element can be anything)
+
+            $('p:nth-child(5)').append('-appending with 5th chaild');
+            // Selects all <p> elements which is the 2nd last child of its parent element.
+
+            $('p:nth-last-child(3)').css('background-color', 'purple');
+
+            // Selects all <p> elements which is the only child of its parent element
+
+            $('p:only-child').append('appending on only child');
+
+
+        });
+    </script>
+
+</body>
+
+</html>
