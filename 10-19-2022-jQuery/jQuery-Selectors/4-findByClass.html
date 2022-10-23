@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find by class</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="myClass">
+      <p>div 1</p>
+    </div>
+    <div class="myClass">
+        <p>div2</p>
+
+    </div>
+
+    <div class="myClass2">
+        <p>div3</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+        
+            // Find all the elements with class=myClass.
+            $('.myClass').css('background-color','blue');
+            // Finds all elements whose class attribute is set to myClass or myClass2
+            $('.myClass, .myClass2').css('background-color','blue');
+            // Finds all <div> elements with class=myClass
+            $('div.myClass').css('background-color','purple');
+
+        });
+    </script>
+    
+</body>
+</html>
