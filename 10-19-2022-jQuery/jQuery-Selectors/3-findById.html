@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+     
+   
+    <div id="mydiv1">
+        <p>p-</p>
+
+    </div>
+
+    <div id="mydiv2">
+        <div id="mydiv">
+            <div>mydiv-</div>
+            <p>mydiv-</p>
+
+        </div>
+        <p>p-</p>
+        <pre>pre-</pre>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+
+            // Find element whose id is mydiv1
+
+            $('#mydiv1').css('background-color', 'blue');
+
+            // Find <div> element whose Id is myDiv
+            $('div#mydiv').append('appeding this text ');
+            $('div#mydiv').css('background-color','red');
+            // Find multiple elements by id separated by comma.
+
+            $('#mydiv1,#mydiv2').append("appeding this text to mydiv1 and mydiv2");
+            
+
+      
+
+        });
+
+    </script>
+    
+</body>
+</html>
