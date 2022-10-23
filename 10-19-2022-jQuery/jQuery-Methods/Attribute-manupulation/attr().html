@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom attr()method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+        This is div.
+    </div>
+    <p style="font-size:16px;font-weight:bold">
+        This is paragraph.
+    </p>
+    <div>
+        This is div.
+    </div>
+    <p>
+        This is paragraph.
+    </p>
+
+    <script>
+/*
+jQuery attr() method is used to get or set the value of specified attribute of DOM element.
+
+Syntax:
+$('selector expression').attr('name','value');
+*/
+
+let value=$('p').attr('style'); // returns "font-size:16px;font-weight:bold" 
+alert(value);
+$('div').attr('class','yellowDiv');  // adds class='divCls' to each div element
+
+
+    </script>
+
+    
+</body>
+</html>
