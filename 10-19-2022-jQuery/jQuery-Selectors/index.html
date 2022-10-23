@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <p></p>
+        <p></p>
+    </div>
+
+    <p></p>
+
+    <div>
+        <pre>Hello</pre>
+    </div>
+
+    <script>
+
+        // Syntax
+
+        // $(selector expression, context )
+        // jQuery(selector expression, context)
+        $(document).ready(() => {
+            $('p').append('This is paragraph.'); // appends text to all p elements 
+
+            $('div').append('This is div');
+
+            jQuery('p').css('background-color', 'purple');
+
+
+            //selecting with window
+            window.jQuery('pre').append('-appending to pre elements')
+
+            window.$('p').css('text-align', 'center');
+
+        });
+
+    </script>
+
+</body>
+
+</html>
