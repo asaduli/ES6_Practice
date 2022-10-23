@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding element by attribute</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+    <div class="mydiv1">
+
+        <p>this is text from mydiv 1</p>
+
+    </div>
+
+    <div class="mydiv2">
+
+
+    </div>
+
+    <span class="myclass">
+
+        <pre>pre</pre>
+
+    </span>
+
+    <p class="myclass">
+
+    </p>
+
+    <pre class="my-class">pre</pre>
+
+
+    <b id="bold">bold-</b>
+
+    <div class="my-class">
+  
+    </div>
+    <span id="spa">span</span>
+    
+    <script>
+        $(document).ready(()=>{
+
+            //finding elements with attribute name
+
+            // Find all the elements with the ID attribute(whatever the value).
+            
+            $('[id]').append('-appending with ID attribute');
+            // Find all the elements with the class attribute(whatever the value).
+            $('[class]').css('color', 'purple');
+         
+            //finding element with attribute value
+
+            // Find all the <div> elements whose class attributes are equal to mydiv1.
+
+            $('div[class=mydiv1]').css('width', '300px');
+
+            //find the element with the id attribute equal to bold
+
+            $('[id=bold]').css('color', 'green');
+            // Selects <div> elements whose class attribute value starts with my.
+
+           $('div[class^="my"]').append('-appending with class attribute ');
+           
+
+           $('div[class $=ss]').css('text-align', 'center');
+
+
+        });
+    </script>
+</body>
+</html>
