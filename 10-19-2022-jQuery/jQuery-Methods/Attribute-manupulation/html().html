@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom html()method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="mydiv">
+        <pre>pretext </pre>
+
+    </div>
+    <div>
+       
+    </div>
+   
+
+    <script>
+/*
+The jQuery html() method gets or sets html content to the specified DOM element(s).
+
+Syntax:
+$('selector expression').html('content');
+*/
+alert($('.mydiv').html());  //returns innerHtml of #myDiv
+
+//add <p>This is paragraph.</p> to div elements
+
+$('div').html('<p>This is paragraph.</p>');
+
+    </script>
+
+    
+</body>
+</html>
