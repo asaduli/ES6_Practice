@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimension width methods</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div{
+            margin: 10px 10px 10px 10px;
+            padding: 5px 5px 5px 5px;
+            border: 4px solid black;
+            height: 50px;
+        }
+        p{
+            background-color: aqua;
+            border: 2px dotted;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="mybutton" >Click Me</button>
+
+ <div>
+
+ </div>
+
+<p>
+
+</p>
+    <script>
+/*
+// width()	Get or set the width of the specified element(s).
+// innerWidth()	Get or set the inner width (padding + element's width) of the specified element(s).
+// outerWidth()	Get or set outer width (border + padding + element's width) of the specified element(s).
+
+*/
+$(document).ready(() => {
+    $('#mybutton').click(()=>{
+    
+       $('div').width(400);
+        alert('Div width is: '+$('div').width()+'\n'+'div inner width is: '+$('div').innerWidth()+'\n'+'div outer width is: '+$('div').outerWidth())
+
+        $('p').width(300);
+    })
+
+});
+
+  
+
+    </script>
+
+    
+</body>
+</html>
