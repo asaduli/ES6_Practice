@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimension offset method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        div{
+            margin: 10px 10px 10px 10px;
+            padding: 5px 5px 5px 5px;
+            border: 4px solid black;
+            height: 50px;
+        }
+        p{
+            background-color: aqua;
+            border: 2px dotted;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="mybutton" >Click Me</button>
+
+ <div>
+
+ </div>
+
+<p>
+
+</p>
+    <script>
+/*
+Get or set left and top coordinates of the specified element(s).
+
+*/
+$(document).ready(() => {
+    $('#mybutton').click(()=>{
+     
+        let ofs=$('div').offset();
+        alert('div left: '+ofs.left+' div top: '+ofs.top)
+
+        $('p').offset({left:50,top:200})
+       
+    })
+
+});
+
+  
+
+    </script>
+
+    
+</body>
+</html>
