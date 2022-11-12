@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery CSS method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="myDiv">
+        <p>This is first paragraph.</p>
+    </div>
+    <div>
+        <p>This is second paragraph.</p>
+    </div>
+    <div>
+        <p>This is third paragraph.</p>
+    </div>
+    <script>
+        // The jQuery css() method gets or sets style properties to the specified element(s).
+
+        
+        $('#myDiv').css('background-color', 'yellow');
+        $('p').css({ 'background-color': 'red', 'width': '400px' });
+
+        $('#myDiv').css('background-color'); // returns rgb(255,255,0) for yellow color
+
+    </script>
+</body>
+
+</html>
